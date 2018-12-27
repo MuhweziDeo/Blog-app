@@ -33,7 +33,8 @@ class Blog extends Component {
                     <NewPost />
                 </section> */}
                 {/* <Posts/> */}
-                <Route path="/" exact render={()=><Posts/>}/>
+                {/* <Route path="/" exact render={()=><Posts/>}/> */}
+                <Route path='' exact component={Posts}/>
                 {/* <Route path="/new_posts" exact render={()=><h1>Posts</h1>}/> */}
             </div>
         );
