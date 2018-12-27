@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './Blog.css';
 // import axios from 'axios';
 import Posts from './Posts/Posts';
-import {Route,Link} from 'react-router-dom';
+import {Route,NavLink} from 'react-router-dom';
 import NewPost from '../Blog/NewPost/NewPost';
 
 class Blog extends Component {
@@ -20,8 +20,13 @@ class Blog extends Component {
               <header>
                 <nav>
                   <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/new_post">New Post</Link></li>
+                    <li><NavLink to="/" exact
+                    // u can change active class name
+                    activeClassName="active">
+                    Home
+                    </NavLink>
+                    </li>
+                    <li><NavLink to="/new_post">New Post</NavLink></li>
                   </ul>
                 </nav>
               </header>

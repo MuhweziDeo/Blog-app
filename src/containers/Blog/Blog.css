@@ -25,6 +25,13 @@
 }
 
 .Blog a:hover{
-    color: orange;
+    color: rgb(0, 17, 255);
+    border-bottom: 4px solid blue;
+    
+}
+
+.Blog a:active,.Blog a.active{
+    background: orangered;
+    padding: 10px;
     border-bottom: 4px solid blue;
 }
