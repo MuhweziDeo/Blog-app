@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import './Blog.css';
 // import axios from 'axios';
 import Posts from './Posts/Posts';
+import {Route} from 'react-router-dom';
+
+
 class Blog extends Component {
   state={
     posts:[],
@@ -18,7 +21,7 @@ class Blog extends Component {
                 <nav>
                   <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">New Post</a></li>
+                    <li><a href="/new_posts">New Post</a></li>
                   </ul>
                 </nav>
               </header>
@@ -29,7 +32,9 @@ class Blog extends Component {
                 <section>
                     <NewPost />
                 </section> */}
-                <Posts/>
+                {/* <Posts/> */}
+                <Route path="/" exact render={()=><Posts/>}/>
+                {/* <Route path="/new_posts" exact render={()=><h1>Posts</h1>}/> */}
             </div>
         );
     }
