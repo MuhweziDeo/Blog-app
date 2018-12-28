@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-
 import './Blog.css';
-// import axios from 'axios';
 import Posts from './Posts/Posts';
 import {Route,NavLink,Switch,Redirect} from 'react-router-dom';
-import NewPost from '../Blog/NewPost/NewPost';
+// import NewPost from '../Blog/NewPost/NewPost';
+import asyncComponent from '../../hoc/asyncComponent';
 
-
+const AsyncNewPost=asyncComponent(()=>{
+  return import('../Blog/NewPost/NewPost');
+});
 
 class Blog extends Component {
   state={
@@ -33,17 +34,8 @@ class Blog extends Component {
                   </ul>
                 </nav>
               </header>
-            
-                {/* <section>
-                    <FullPost  id={this.state.selectedPostId}/>
-                </section>
-                <section>
-                    <NewPost />
-                </section> */}
-                {/* <Posts/> */}
-                {/* <Route path="/" exact render={()=><Posts/>}/> */}
                 <Switch>
-                {this.state.auth ? <Route path='/new_post' component={NewPost}/> :null}
+                {this.state.auth ? <Route path='/new_post' component={AsyncNewPost}/> :null}
                    
                     <Route path='/posts' component={Posts}/>
                     <Route render={()=><h1>404</h1>} />
