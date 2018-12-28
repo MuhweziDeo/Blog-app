@@ -11,7 +11,8 @@ import NewPost from '../Blog/NewPost/NewPost';
 class Blog extends Component {
   state={
     posts:[],
-    selectedPostId:null
+    selectedPostId:null,
+    auth:true
   }
   
  
@@ -42,8 +43,8 @@ class Blog extends Component {
                 {/* <Posts/> */}
                 {/* <Route path="/" exact render={()=><Posts/>}/> */}
                 <Switch>
-               
-                    <Route path='/new_post' component={NewPost}/>
+                {this.state.auth ? <Route path='/new_post' component={NewPost}/> :null}
+                   
                     <Route path='/posts' component={Posts}/>
                     
                     <Redirect from="/" to="/posts" />
