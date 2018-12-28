@@ -24,7 +24,7 @@ class Blog extends Component {
                     <li><NavLink to="/" exact
                     // u can change active class name
                     activeClassName="active">
-                    Home
+                    Posts
                     </NavLink>
                     </li>
                     <li><NavLink to="/new_post">New Post</NavLink></li>
